@@ -1,0 +1,35 @@
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Environment / secrets -------------------------------------------------
+.env
+backend/.env
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Node / frontend -------------------------------------------------------
+node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-error.log*
+
+# --- Generated ML artifacts ------------------------------------------------
+# The deployed artifacts in models/ ARE shipped; notebook scratch artifacts and
+# cached plots are not.
+models/notebook_artifacts/
+*.joblib.tmp
+
+# --- OS / editor -----------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

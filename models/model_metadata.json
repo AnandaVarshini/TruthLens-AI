@@ -1,0 +1,94 @@
+{
+  "selected_model": "logistic_regression",
+  "selected_model_display_name": "Logistic Regression (A1)",
+  "classes": [
+    "Real",
+    "Misleading",
+    "Partially False",
+    "Fake"
+  ],
+  "label_mapping": {
+    "true": "Real",
+    "mostly-true": "Misleading",
+    "half-true": "Partially False",
+    "barely-true": "Partially False",
+    "false": "Fake",
+    "pants-fire": "Fake"
+  },
+  "selection_criterion": "highest macro-F1 on the validation split",
+  "test_metrics": {
+    "accuracy": 0.3784206411258796,
+    "precision_weighted": 0.36128034995990577,
+    "recall_weighted": 0.3784206411258796,
+    "f1_weighted": 0.3590411267368458,
+    "f1_macro": 0.3231156462424087,
+    "precision_macro": 0.34458843499992137,
+    "recall_macro": 0.32418191674260066,
+    "per_class": {
+      "Real": {
+        "precision": 0.27049180327868855,
+        "recall": 0.15714285714285714,
+        "f1": 0.19879518072289157,
+        "support": 210
+      },
+      "Misleading": {
+        "precision": 0.3221476510067114,
+        "recall": 0.1927710843373494,
+        "f1": 0.24120603015075376,
+        "support": 249
+      },
+      "Partially False": {
+        "precision": 0.41369047619047616,
+        "recall": 0.5791666666666667,
+        "f1": 0.4826388888888889,
+        "support": 480
+      },
+      "Fake": {
+        "precision": 0.37202380952380953,
+        "recall": 0.36764705882352944,
+        "f1": 0.3698224852071006,
+        "support": 340
+      }
+    },
+    "confusion_matrix": [
+      [
+        33,
+        27,
+        97,
+        53
+      ],
+      [
+        31,
+        48,
+        127,
+        43
+      ],
+      [
+        34,
+        53,
+        278,
+        115
+      ],
+      [
+        24,
+        21,
+        170,
+        125
+      ]
+    ],
+    "labels": [
+      "Real",
+      "Misleading",
+      "Partially False",
+      "Fake"
+    ]
+  },
+  "generated_at": "2026-10-29T07:20:47.803772+00:00",
+  "environment": {
+    "python": "3.11.2",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6",
+    "platform": "Linux-6.1.158+-x86_64-with-glibc2.36"
+  }
+}

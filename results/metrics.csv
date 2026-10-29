@@ -1,0 +1,9 @@
+model,model_key,split,accuracy,precision_weighted,recall_weighted,f1_weighted,f1_macro
+Logistic Regression (A1),logistic_regression,validation,0.4034,0.3841,0.4034,0.3843,0.3383
+Logistic Regression (A1),logistic_regression,test,0.3784,0.3613,0.3784,0.359,0.3231
+Support Vector Machine (A2),svm,validation,0.3784,0.3668,0.3784,0.3691,0.3296
+Support Vector Machine (A2),svm,test,0.344,0.3342,0.344,0.3374,0.3087
+Random Forest (A3),random_forest,validation,0.3894,0.354,0.3894,0.3185,0.2483
+Random Forest (A3),random_forest,test,0.3745,0.3502,0.3745,0.2982,0.2383
+Multinomial Naive Bayes (A4),naive_bayes,validation,0.3722,0.3655,0.3722,0.3677,0.3267
+Multinomial Naive Bayes (A4),naive_bayes,test,0.3581,0.3515,0.3581,0.3538,0.3278

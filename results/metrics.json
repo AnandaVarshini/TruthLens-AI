@@ -1,0 +1,722 @@
+{
+  "project": "TruthLens AI",
+  "task": "Four-class fake-news / claim reliability classification",
+  "classes": [
+    "Real",
+    "Misleading",
+    "Partially False",
+    "Fake"
+  ],
+  "class_descriptions": {
+    "Real": "The statement is rated accurate; the available evidence supports the claim.",
+    "Misleading": "The statement is mostly accurate but omits context or overstates the case.",
+    "Partially False": "Part of the claim is accurate and part is false or unsupported.",
+    "Fake": "The statement is false or fabricated; the evidence contradicts the claim."
+  },
+  "label_mapping": {
+    "true": "Real",
+    "mostly-true": "Misleading",
+    "half-true": "Partially False",
+    "barely-true": "Partially False",
+    "false": "Fake",
+    "pants-fire": "Fake"
+  },
+  "selected_model": "logistic_regression",
+  "selected_model_display_name": "Logistic Regression (A1)",
+  "selection_criterion": "highest macro-F1 on the validation split",
+  "selected_model_metrics": {
+    "accuracy": 0.3784206411258796,
+    "precision_weighted": 0.36128034995990577,
+    "recall_weighted": 0.3784206411258796,
+    "f1_weighted": 0.3590411267368458,
+    "f1_macro": 0.3231156462424087,
+    "precision_macro": 0.34458843499992137,
+    "recall_macro": 0.32418191674260066,
+    "per_class": {
+      "Real": {
+        "precision": 0.27049180327868855,
+        "recall": 0.15714285714285714,
+        "f1": 0.19879518072289157,
+        "support": 210
+      },
+      "Misleading": {
+        "precision": 0.3221476510067114,
+        "recall": 0.1927710843373494,
+        "f1": 0.24120603015075376,
+        "support": 249
+      },
+      "Partially False": {
+        "precision": 0.41369047619047616,
+        "recall": 0.5791666666666667,
+        "f1": 0.4826388888888889,
+        "support": 480
+      },
+      "Fake": {
+        "precision": 0.37202380952380953,
+        "recall": 0.36764705882352944,
+        "f1": 0.3698224852071006,
+        "support": 340
+      }
+    },
+    "confusion_matrix": [
+      [
+        33,
+        27,
+        97,
+        53
+      ],
+      [
+        31,
+        48,
+        127,
+        43
+      ],
+      [
+        34,
+        53,
+        278,
+        115
+      ],
+      [
+        24,
+        21,
+        170,
+        125
+      ]
+    ],
+    "labels": [
+      "Real",
+      "Misleading",
+      "Partially False",
+      "Fake"
+    ]
+  },
+  "candidates": {
+    "logistic_regression": {
+      "display_name": "Logistic Regression (A1)",
+      "best_params": {
+        "C": 1.0,
+        "class_weight": null
+      },
+      "validation": {
+        "accuracy": 0.4034401876465989,
+        "precision_weighted": 0.384132543015984,
+        "recall_weighted": 0.4034401876465989,
+        "f1_weighted": 0.3843477155540512,
+        "f1_macro": 0.33828517457549717,
+        "precision_macro": 0.35773612452727827,
+        "recall_macro": 0.33883230647227475,
+        "per_class": {
+          "Real": {
+            "precision": 0.2727272727272727,
+            "recall": 0.17751479289940827,
+            "f1": 0.21505376344086022,
+            "support": 169
+          },
+          "Misleading": {
+            "precision": 0.29577464788732394,
+            "recall": 0.168,
+            "f1": 0.21428571428571427,
+            "support": 250
+          },
+          "Partially False": {
+            "precision": 0.4350453172205438,
+            "recall": 0.5938144329896907,
+            "f1": 0.5021795989537925,
+            "support": 485
+          },
+          "Fake": {
+            "precision": 0.4273972602739726,
+            "recall": 0.416,
+            "f1": 0.42162162162162165,
+            "support": 375
+          }
+        },
+        "confusion_matrix": [
+          [
+            30,
+            22,
+            80,
+            37
+          ],
+          [
+            30,
+            42,
+            128,
+            50
+          ],
+          [
+            26,
+            49,
+            288,
+            122
+          ],
+          [
+            24,
+            29,
+            166,
+            156
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      },
+      "test": {
+        "accuracy": 0.3784206411258796,
+        "precision_weighted": 0.36128034995990577,
+        "recall_weighted": 0.3784206411258796,
+        "f1_weighted": 0.3590411267368458,
+        "f1_macro": 0.3231156462424087,
+        "precision_macro": 0.34458843499992137,
+        "recall_macro": 0.32418191674260066,
+        "per_class": {
+          "Real": {
+            "precision": 0.27049180327868855,
+            "recall": 0.15714285714285714,
+            "f1": 0.19879518072289157,
+            "support": 210
+          },
+          "Misleading": {
+            "precision": 0.3221476510067114,
+            "recall": 0.1927710843373494,
+            "f1": 0.24120603015075376,
+            "support": 249
+          },
+          "Partially False": {
+            "precision": 0.41369047619047616,
+            "recall": 0.5791666666666667,
+            "f1": 0.4826388888888889,
+            "support": 480
+          },
+          "Fake": {
+            "precision": 0.37202380952380953,
+            "recall": 0.36764705882352944,
+            "f1": 0.3698224852071006,
+            "support": 340
+          }
+        },
+        "confusion_matrix": [
+          [
+            33,
+            27,
+            97,
+            53
+          ],
+          [
+            31,
+            48,
+            127,
+            43
+          ],
+          [
+            34,
+            53,
+            278,
+            115
+          ],
+          [
+            24,
+            21,
+            170,
+            125
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      }
+    },
+    "svm": {
+      "display_name": "Support Vector Machine (A2)",
+      "best_params": {
+        "C": 0.5
+      },
+      "validation": {
+        "accuracy": 0.3784206411258796,
+        "precision_weighted": 0.3667946795387413,
+        "recall_weighted": 0.3784206411258796,
+        "f1_weighted": 0.3690701967248068,
+        "f1_macro": 0.3295762007171429,
+        "precision_macro": 0.33774117407881005,
+        "recall_macro": 0.32880282234286995,
+        "per_class": {
+          "Real": {
+            "precision": 0.22758620689655173,
+            "recall": 0.1952662721893491,
+            "f1": 0.21019108280254778,
+            "support": 169
+          },
+          "Misleading": {
+            "precision": 0.2976190476190476,
+            "recall": 0.2,
+            "f1": 0.23923444976076555,
+            "support": 250
+          },
+          "Partially False": {
+            "precision": 0.4236706689536878,
+            "recall": 0.5092783505154639,
+            "f1": 0.46254681647940077,
+            "support": 485
+          },
+          "Fake": {
+            "precision": 0.402088772845953,
+            "recall": 0.4106666666666667,
+            "f1": 0.40633245382585753,
+            "support": 375
+          }
+        },
+        "confusion_matrix": [
+          [
+            33,
+            27,
+            70,
+            39
+          ],
+          [
+            38,
+            50,
+            111,
+            51
+          ],
+          [
+            41,
+            58,
+            247,
+            139
+          ],
+          [
+            33,
+            33,
+            155,
+            154
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      },
+      "test": {
+        "accuracy": 0.34401876465989056,
+        "precision_weighted": 0.33418286758298116,
+        "recall_weighted": 0.34401876465989056,
+        "f1_weighted": 0.3373819420916225,
+        "f1_macro": 0.3087360818399619,
+        "precision_macro": 0.3127120214537459,
+        "recall_macro": 0.30850086269447535,
+        "per_class": {
+          "Real": {
+            "precision": 0.24260355029585798,
+            "recall": 0.19523809523809524,
+            "f1": 0.21635883905013192,
+            "support": 210
+          },
+          "Misleading": {
+            "precision": 0.255,
+            "recall": 0.20481927710843373,
+            "f1": 0.22717149220489977,
+            "support": 249
+          },
+          "Partially False": {
+            "precision": 0.40625,
+            "recall": 0.46041666666666664,
+            "f1": 0.431640625,
+            "support": 480
+          },
+          "Fake": {
+            "precision": 0.3469945355191257,
+            "recall": 0.3735294117647059,
+            "f1": 0.3597733711048159,
+            "support": 340
+          }
+        },
+        "confusion_matrix": [
+          [
+            41,
+            35,
+            75,
+            59
+          ],
+          [
+            44,
+            51,
+            108,
+            46
+          ],
+          [
+            49,
+            76,
+            221,
+            134
+          ],
+          [
+            35,
+            38,
+            140,
+            127
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      }
+    },
+    "random_forest": {
+      "display_name": "Random Forest (A3)",
+      "best_params": {
+        "n_estimators": 200,
+        "min_samples_leaf": 1
+      },
+      "validation": {
+        "accuracy": 0.3893666927286943,
+        "precision_weighted": 0.354002653575389,
+        "recall_weighted": 0.3893666927286943,
+        "f1_weighted": 0.31848149555734123,
+        "f1_macro": 0.24831576314557147,
+        "precision_macro": 0.33236637922945866,
+        "recall_macro": 0.28360607169726915,
+        "per_class": {
+          "Real": {
+            "precision": 0.2777777777777778,
+            "recall": 0.029585798816568046,
+            "f1": 0.053475935828877004,
+            "support": 169
+          },
+          "Misleading": {
+            "precision": 0.25862068965517243,
+            "recall": 0.06,
+            "f1": 0.09740259740259741,
+            "support": 250
+          },
+          "Partially False": {
+            "precision": 0.39790575916230364,
+            "recall": 0.7835051546391752,
+            "f1": 0.5277777777777778,
+            "support": 485
+          },
+          "Fake": {
+            "precision": 0.3951612903225806,
+            "recall": 0.2613333333333333,
+            "f1": 0.3146067415730337,
+            "support": 375
+          }
+        },
+        "confusion_matrix": [
+          [
+            5,
+            16,
+            125,
+            23
+          ],
+          [
+            8,
+            15,
+            189,
+            38
+          ],
+          [
+            2,
+            14,
+            380,
+            89
+          ],
+          [
+            3,
+            13,
+            261,
+            98
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      },
+      "test": {
+        "accuracy": 0.3745113369820172,
+        "precision_weighted": 0.35022581604683684,
+        "recall_weighted": 0.3745113369820172,
+        "f1_weighted": 0.2982024986132879,
+        "f1_macro": 0.2383346791800474,
+        "precision_macro": 0.3390466902792525,
+        "recall_macro": 0.27867894898923423,
+        "per_class": {
+          "Real": {
+            "precision": 0.2631578947368421,
+            "recall": 0.023809523809523808,
+            "f1": 0.043668122270742356,
+            "support": 210
+          },
+          "Misleading": {
+            "precision": 0.358974358974359,
+            "recall": 0.05622489959839357,
+            "f1": 0.09722222222222222,
+            "support": 249
+          },
+          "Partially False": {
+            "precision": 0.38366080661840746,
+            "recall": 0.7729166666666667,
+            "f1": 0.5127850725639254,
+            "support": 480
+          },
+          "Fake": {
+            "precision": 0.35039370078740156,
+            "recall": 0.26176470588235295,
+            "f1": 0.2996632996632997,
+            "support": 340
+          }
+        },
+        "confusion_matrix": [
+          [
+            5,
+            8,
+            163,
+            34
+          ],
+          [
+            4,
+            14,
+            194,
+            37
+          ],
+          [
+            3,
+            12,
+            371,
+            94
+          ],
+          [
+            7,
+            5,
+            239,
+            89
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      }
+    },
+    "naive_bayes": {
+      "display_name": "Multinomial Naive Bayes (A4)",
+      "best_params": {
+        "alpha": 0.1
+      },
+      "validation": {
+        "accuracy": 0.3721657544956998,
+        "precision_weighted": 0.36549776532799627,
+        "recall_weighted": 0.3721657544956998,
+        "f1_weighted": 0.36774681564590167,
+        "f1_macro": 0.3267118969381575,
+        "precision_macro": 0.3294221841116374,
+        "recall_macro": 0.3259920087842372,
+        "per_class": {
+          "Real": {
+            "precision": 0.19254658385093168,
+            "recall": 0.1834319526627219,
+            "f1": 0.18787878787878787,
+            "support": 169
+          },
+          "Misleading": {
+            "precision": 0.27403846153846156,
+            "recall": 0.228,
+            "f1": 0.24890829694323144,
+            "support": 250
+          },
+          "Partially False": {
+            "precision": 0.4296160877513711,
+            "recall": 0.4845360824742268,
+            "f1": 0.45542635658914726,
+            "support": 485
+          },
+          "Fake": {
+            "precision": 0.4214876033057851,
+            "recall": 0.408,
+            "f1": 0.4146341463414634,
+            "support": 375
+          }
+        },
+        "confusion_matrix": [
+          [
+            31,
+            46,
+            59,
+            33
+          ],
+          [
+            33,
+            57,
+            107,
+            53
+          ],
+          [
+            55,
+            71,
+            235,
+            124
+          ],
+          [
+            42,
+            34,
+            146,
+            153
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      },
+      "test": {
+        "accuracy": 0.35809225957779517,
+        "precision_weighted": 0.35154657062868333,
+        "recall_weighted": 0.35809225957779517,
+        "f1_weighted": 0.3538031219418781,
+        "f1_macro": 0.32778563596955423,
+        "precision_macro": 0.3314156289822314,
+        "recall_macro": 0.3264611492187236,
+        "per_class": {
+          "Real": {
+            "precision": 0.2694610778443114,
+            "recall": 0.21428571428571427,
+            "f1": 0.23872679045092837,
+            "support": 210
+          },
+          "Misleading": {
+            "precision": 0.2777777777777778,
+            "recall": 0.26104417670682734,
+            "f1": 0.2691511387163561,
+            "support": 249
+          },
+          "Partially False": {
+            "precision": 0.42293233082706766,
+            "recall": 0.46875,
+            "f1": 0.44466403162055335,
+            "support": 480
+          },
+          "Fake": {
+            "precision": 0.3554913294797688,
+            "recall": 0.36176470588235293,
+            "f1": 0.358600583090379,
+            "support": 340
+          }
+        },
+        "confusion_matrix": [
+          [
+            45,
+            44,
+            74,
+            47
+          ],
+          [
+            42,
+            65,
+            99,
+            43
+          ],
+          [
+            45,
+            77,
+            225,
+            133
+          ],
+          [
+            35,
+            48,
+            134,
+            123
+          ]
+        ],
+        "labels": [
+          "Real",
+          "Misleading",
+          "Partially False",
+          "Fake"
+        ]
+      }
+    }
+  },
+  "dataset": {
+    "source_file": "/home/user/work/TruthLens-AI/data/cleaned_dataset.csv",
+    "initial_rows": 12836,
+    "rows_after_basic_cleaning": 12836,
+    "duplicate_rows_removed": 26,
+    "duplicates_inside_train": 0,
+    "split_fallback_used": false,
+    "split_counts": {
+      "train": 10252,
+      "valid": 1279,
+      "test": 1279
+    },
+    "class_distribution": {
+      "Real": 2063,
+      "Misleading": 2466,
+      "Partially False": 4746,
+      "Fake": 3561
+    },
+    "class_distribution_by_split": {
+      "train": {
+        "Real": 1681,
+        "Misleading": 1965,
+        "Partially False": 3774,
+        "Fake": 2832
+      },
+      "valid": {
+        "Real": 169,
+        "Misleading": 250,
+        "Partially False": 485,
+        "Fake": 375
+      },
+      "test": {
+        "Real": 210,
+        "Misleading": 249,
+        "Partially False": 480,
+        "Fake": 340
+      }
+    }
+  },
+  "preprocessing": {
+    "steps": [
+      "HTML unescape",
+      "lowercase",
+      "remove URLs",
+      "remove HTML tags",
+      "remove punctuation and digits",
+      "collapse whitespace"
+    ],
+    "stop_words": "scikit-learn English stop-word list inside TF-IDF"
+  },
+  "features": {
+    "word_tfidf": "TF-IDF, 1-2 grams, min_df=2, max_features=60000, sublinear_tf",
+    "char_tfidf": "char_wb TF-IDF, 3-5 grams, min_df=3, max_features=60000"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.4.6",
+    "platform": "Linux-6.1.158+-x86_64-with-glibc2.36"
+  },
+  "generated_at": "2026-10-29T07:20:47.803772+00:00",
+  "training_seconds": 84.4,
+  "disclaimer": "Predictions are statistical estimates learned from the LIAR dataset, not proof that a statement is true or false."
+}
